@@ -10,51 +10,37 @@
       to bring you the very best cat images from around the globe, so you can
       indulge your passion for these lovable creatures anytime, anywhere.
     </p>
-    <div id="gallery" class="flex flex-row flex-wrap">
+
+    <div class="spotlight-group flex flex-row flex-wrap justify-center">
       <a v-for="item in image.images.test" :key="item.id"
-        :href="'https://ik.imagekit.io/madsouris/test/' + 'tr:w-1080/' + item.path" data-pswp-width="300"
-        data-pswp-height="300" target="_blank" rel="noreferrer">
-        <nuxt-img provider="imagekit" :src="'/test/' + item.path" width="300" height="300" />
+        :href="'https://ik.imagekit.io/madsouris/test/' + 'tr:w-1080/' + item.path" rel="noreferrer" class="spotlight"
+        data-control="fullscreen,close">
+        <nuxt-img provider="imagekit" :src="'/test/' + item.path" width="300" height="300" alt="Hairy kitty" />
       </a>
 
     </div>
 
+
   </div>
 </template>
 
-<script>
-import PhotoSwipeLightbox from 'photoswipe/lightbox';
+<script lang="ts" setup>
+
+
 import { useImageStore } from "@/stores/imageStore";
-import { DefineComponent } from 'vue';
+const image = useImageStore();
 
-export default defineComponent({
-  name: 'GalleryPage',
-  setup() {
-    const image = useImageStore();
-
-    return {
-      image
+useHead({
+  script: [
+    {
+      src: 'https://rawcdn.githack.com/nextapps-de/spotlight/0.7.8/dist/spotlight.bundle.js',
+      type: 'text/javascript'
     }
-  },
-  mounted() {
-    if (!this.lightbox) {
-      this.lightbox = new PhotoSwipeLightbox({
-        gallery: '#gallery',
-        children: 'a',
-        pswpModule: () => import('photoswipe'),
-      });
-      this.lightbox.init();
-    }
-  },
-  unmounted() {
-    if (this.lightbox) {
-      this.lightbox.destroy();
-      this.lightbox = null;
-    }
-  },
-
+  ]
 })
 
-
 </script>
+
+
+
 

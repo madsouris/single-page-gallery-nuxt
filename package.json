@@ -10,17 +10,14 @@
   },
   "devDependencies": {
     "@nuxt/image-edge": "^1.0.0-28020728.5df24eb",
-    "@types/photoswipe": "^4.1.2",
     "nuxt": "^3.3.3",
-    "nuxt-windicss": "^2.6.0",
-    "photoswipe": "^5.3.7"
+    "nuxt-windicss": "^2.6.0"
   },
   "overrides": {
     "vue": "latest"
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.8",
-    "lightgallery": "^2.7.1",
     "pinia": "^2.0.34"
   }
 }
