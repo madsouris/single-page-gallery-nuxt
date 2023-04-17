@@ -12,14 +12,18 @@
       to bring you the very best cat images from around the globe, so you can
       indulge your passion for these lovable creatures anytime, anywhere.
     </p>
-    <nuxt-img provider="imagekit" src="/test/Sheba1.jpg" width="300" />
-    <!-- <div v-for="image in images">
-      <img :src="image" alt="image" />
-    </div> -->
+    <nuxt-img
+      v-for="item in image.images.test"
+      :key="item.id"
+      provider="imagekit"
+      :src="'/test/' + item.path"
+      width="300"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
-// const images = import.meta.glob("/public/img/*.jpg");
-// console.log(images);
+import { useImageStore } from "@/stores/imageStore";
+
+const image: any = useImageStore();
 </script>
