@@ -7,7 +7,7 @@ export default defineNuxtConfig({
         imagekit: {      
             baseURL: 'https://ik.imagekit.io/madsouris/'    
         }  
-    }
+    },
 });
 
 
