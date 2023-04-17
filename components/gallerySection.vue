@@ -12,5 +12,14 @@
       to bring you the very best cat images from around the globe, so you can
       indulge your passion for these lovable creatures anytime, anywhere.
     </p>
+    <nuxt-img provider="imagekit" src="/test/Sheba1.jpg" width="300" />
+    <!-- <div v-for="image in images">
+      <img :src="image" alt="image" />
+    </div> -->
   </div>
 </template>
+
+<script setup lang="ts">
+// const images = import.meta.glob("/public/img/*.jpg");
+// console.log(images);
+</script>
